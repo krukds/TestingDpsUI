@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+}
+
+#welcome-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right-button {
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid grey 1px;
+}

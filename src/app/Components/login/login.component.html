@@ -1,0 +1,19 @@
+<div class="login-form">
+    <form (submit)="onLogin()">
+      <div class="div-text">    
+        <label class="main-text">Увійдіть в систему</label>
+      </div>
+      <div class="labelinput">
+        <label for="username">Логін:</label>
+        <input type="username" id="username" [(ngModel)]="username" name="username">
+      </div>
+      
+      <div class="labelinput">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password">
+      </div>
+      <button appButtonStyle type="submit">Увійти</button>
+    </form>
+  
+  </div>
+  

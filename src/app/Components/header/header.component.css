@@ -1,0 +1,22 @@
+#app-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: lightblue;
+    height: 60px;
+}
+
+#app-header h3 {
+    margin: 10px;
+}
+  
+  #app-header h2 {
+    margin: 0; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#app-header img {
+    height: 50px;
+}
