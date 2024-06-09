@@ -1,0 +1,32 @@
+nav {
+    float: left;
+    width: 20%;
+    background: gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: calc(100vh - 110px);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: #575757;
+}
+
+

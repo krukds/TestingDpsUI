@@ -1,0 +1,4 @@
+<select class="list" (change)="onSelectDepartment($event)">
+    <option value="">Всі</option>
+    <option *ngFor="let department of departments" [value]="department.name" [selected]="selectedDepartmentId === department.id">{{ department.name }}</option>
+  </select>

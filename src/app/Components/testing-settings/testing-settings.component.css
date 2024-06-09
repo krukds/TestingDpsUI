@@ -1,0 +1,21 @@
+img {
+    height: 30px; /* Adjust the height as needed */
+    width: 30px; /* Adjust the width as needed */
+}
+  
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    margin-right: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.testing-name {
+    margin: 0 auto;
+}
+

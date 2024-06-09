@@ -1,0 +1,4 @@
+<select class="list" (change)="onSelectTesting($event)">
+    <option value="">Всі</option>
+    <option *ngFor="let testing of testings" [value]="testing.name" [selected]="selectedTestingId === testing.id">{{ testing.name }}</option>
+</select>

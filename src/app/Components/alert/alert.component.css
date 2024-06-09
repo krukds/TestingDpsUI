@@ -1,0 +1,24 @@
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; /* Білий фон */
+    color: black; /* Чорний текст */
+    padding: 15px;
+    border: 1px solid #ccc; /* Сірі краї */
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
+    z-index: 1000; /* Найвищий рівень */
+    opacity: 1;
+    transition: opacity 0.6s; /* Плавне зникнення */
+  }
+  
+  .alert.alert-success {
+    border-color: #4CAF50; /* Зелений для успіху */
+  }
+  
+  .alert.alert-error {
+    border-color: #f44336; /* Червоний для помилки */
+  }
+  

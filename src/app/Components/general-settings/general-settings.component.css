@@ -1,0 +1,38 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+    width: 40%;
+}
+
+.container {
+    width: 70%;     
+    padding: 10px;    
+    margin: 5px;
+    border-radius: 4px;
+    border: solid grey 1px;
+    background-color: white;
+}
+
+label {
+    width: 30%;
+    font-weight: bold;
+}
+
+p {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    padding: 10px;
+    border: solid grey 1px;
+    border-radius: 10px;
+    margin: 5px;
+}

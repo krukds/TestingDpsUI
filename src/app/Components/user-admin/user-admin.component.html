@@ -1,0 +1,19 @@
+<app-alert #alertComponent></app-alert>
+
+<h3>Адміністрування користувачів</h3>
+<button (click)="openForm()" id="add-user-button">Додати користувача</button>
+<app-add-edit-user-modal (userAdded)="onUserAdded()" (userUpdated)="onUserUpdated()"></app-add-edit-user-modal>
+<div class="list">
+  <label>Виберіть локацію ДПС</label>
+  <div class="container">
+    <app-location-list (locationSelected)="onLocationSelected($event)"></app-location-list>
+  </div>
+</div>
+<div class="list">
+  <label>Виберіть відділ</label>
+  <div class="container">
+    <app-department-list (departmentSelected)="onDepartmentSelected($event)"></app-department-list>
+  </div>
+</div>
+<app-user-list (userDeleted)="onUserDeleted()"></app-user-list>
+

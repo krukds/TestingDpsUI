@@ -1,0 +1,6 @@
+<app-alert #alertComponent></app-alert>
+
+<h3>Адміністрування тестувань</h3>
+<button (click)="openForm()" id="add-testing-button">Додати тестування</button>
+<app-add-edit-testing-modal (testingAdded)="onTestingAdded()" (testingUpdated)="onTestingUpdated()"></app-add-edit-testing-modal>
+<app-testing-list (testingDeleted)="onTestingDeleted()"></app-testing-list>

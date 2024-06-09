@@ -1,0 +1,33 @@
+<div class="container">
+    <h3 class="category-name">Категорії</h3>
+    <button class="add-button" (click)="showInputField()">
+        <img src="assets/add.png" alt="Додати" />
+    </button>
+    <div class="input-container" *ngIf="isAddingCategory">
+        <input type="text" [(ngModel)]="newCategoryName" placeholder="Назва категорії" />
+        <button class="submit-button" (click)="addCategory()">Додати</button>
+        <button class="cancel-button" (click)="cancelAdding()">Скасувати</button>
+    </div>
+</div>
+<div *ngFor="let category of categories">
+    <div class="category-container">
+        <div class="category">
+            <h4 *ngIf="editingCategoryId !== category.id; else editInput">{{ category.name }}</h4>
+            <ng-template #editInput>
+                <input type="text" [(ngModel)]="editedCategoryName" />
+            </ng-template>
+            <div class="category-buttons">
+                <button class="view-tests-button" (click)="toggleTests(category)">
+                    {{ isTestsVisible(category.id) ? 'Сховати тести' : 'Переглянути тести' }}
+                </button>
+                <button class="edit-button" (click)="toggleEdit(category)">
+                    {{ editingCategoryId === category.id ? 'Зберегти' : 'Редагувати' }}
+                </button>
+                <button class="delete-button" (click)="deleteCategory(category.id)">Видалити</button>
+            </div>
+        </div>
+        <div *ngIf="isTestsVisible(category.id)">
+            <app-test-list [categoryId]="category.id"></app-test-list>
+        </div>
+    </div>
+</div>

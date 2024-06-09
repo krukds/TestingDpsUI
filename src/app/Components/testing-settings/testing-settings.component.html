@@ -1,0 +1,7 @@
+<div *ngIf="testing" class="container">
+    <button (click)="onBackNavClicked()" class="back-button">
+        <img src="assets/back.png" alt="Назад" />
+    </button>
+    <h3 class="testing-name">{{ testing.name }}</h3>
+</div>
+<app-category-list *ngIf="testing != null" [testingId]="testing.id"></app-category-list>

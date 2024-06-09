@@ -1,0 +1,54 @@
+<app-alert #alertComponent></app-alert>
+
+<div class="modal-backdrop" *ngIf="isFormVisible">
+<div class="form modal">
+    <form (submit)="onSubmit()">
+      <div class="div-text">    
+        <label class="main-text">{{addEditHeader}}</label>
+      </div>
+      <div class="labelinput">
+        <label for="username">Логін:</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username">
+      </div>
+      
+      <div class="labelinput">
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password">
+      </div>
+
+      <div class="labelinput">
+        <label for="firstname">Ім'я:</label>
+        <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname">
+      </div>
+
+      <div class="labelinput">
+        <label for="lastname">Прізвище:</label>
+        <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname">
+      </div>
+
+      <div class="labelinput">
+        <label for="phone">Телефон:</label>
+        <input type="text" id="phone" [(ngModel)]="phone" name="phone">
+      </div>
+      <div class="labelinput">
+        <label>Виберіть локацію ДПС</label>
+        <div class="container">
+            <app-location-list [selectedLocationId]="location_id" (locationSelected)="onLocationSelected($event)"></app-location-list>
+        </div>
+      </div>
+      <div class="labelinput">
+        <label>Виберіть відділ</label>
+        <div class="container">
+          <app-department-list [selectedDepartmentId]="department_id" (departmentSelected)="onDepartmentSelected($event)"></app-department-list>
+        </div>
+      </div>
+      <div class="buttons">
+        <button appButtonStyle (click)="closeForm()">Скасувати</button>
+        <button appButtonStyle type="submit">{{addEditButton}}</button>
+      </div>
+      
+    </form>
+  
+  </div>
+</div>
+  

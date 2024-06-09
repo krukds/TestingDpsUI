@@ -1,0 +1,4 @@
+<select class="list" (change)="onSelectLocation($event)">
+    <option value="">Всі</option>
+    <option *ngFor="let location of locations" [value]="location.name" [selected]="selectedLocationId === location.id">{{ location.name }}</option>
+</select>

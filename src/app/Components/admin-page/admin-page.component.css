@@ -4,6 +4,8 @@
     justify-content: space-between;
     position: relative;
     padding: 10px;
+    background-color: lightgray;
+    height: 50px;
 }
 
 #welcome-text {
@@ -18,3 +20,12 @@
     border-radius: 10px;
     border: solid grey 1px;
 }
+
+article {
+    float: left;
+    padding: 20px;
+    width: 80%;
+    background-color: #f1f1f1;
+    min-height: calc(100vh - 110px);
+  }
+

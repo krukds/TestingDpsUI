@@ -1,0 +1,32 @@
+<div class="container">
+    <h3 id="testing-header">Список тестувань</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Назва</th>
+          <th>Час</th>
+          <th>Опції</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let testing of testings">
+          <td>{{ testing.id }}</td>
+          <td>{{ testing.name }}</td>
+          <td>{{ testing.time }}</td>
+          <td>
+            <button (click)="editTesting(testing.id)">
+              <img src="assets/edit.png" alt="Редагувати" />
+            </button>
+            <button (click)="deleteTesting(testing.id)">
+              <img src="assets/delete.png" alt="Видалити" />
+            </button>
+            <button (click)="settingTesting(testing.id)">
+                <img src="assets/setting.png" alt="Налаштувати" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

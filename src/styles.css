@@ -35,3 +35,60 @@
 body {
     background-color: white;
 }
+
+
+
+/* Стилізація самої форми */
+.form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+
+.div-text {
+  height: 30px;
+}
+
+.main-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.labelinput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.labelinput label {
+  width: 30%;
+  font-weight: bold;
+}
+/* Стилізація текстових полів */
+form input[type="text"],
+form input[type="password"] {
+  width: 70%; /* Ширина текстових полів на весь контейнер */
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px; /* Скруглені кути текстових полів */
+  border: solid grey 1px;
+}
+
+/* Стилізація кнопки входу */
+button[appButtonStyle] {
+  padding: 10px;
+  margin-top: 10px; /* Відступ зверху кнопки */
+  border-radius: 4px; /* Скруглені кути кнопки */
+}
+
+

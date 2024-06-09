@@ -1,11 +1,11 @@
-<div class="login-form">
+<div class="form">
     <form (submit)="onLogin()">
       <div class="div-text">    
         <label class="main-text">Увійдіть в систему</label>
       </div>
       <div class="labelinput">
         <label for="username">Логін:</label>
-        <input type="username" id="username" [(ngModel)]="username" name="username">
+        <input type="text" id="username" [(ngModel)]="username" name="username">
       </div>
       
       <div class="labelinput">
@@ -16,4 +16,7 @@
     </form>
   
   </div>
+
+  <app-alert #alertComponent></app-alert>
+
   

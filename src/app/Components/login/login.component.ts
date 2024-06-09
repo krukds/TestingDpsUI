@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppComponent } from '../../app.component';
 import { AuthService } from '../../Services/auth.service';
+import { AlertComponent } from '../alert/alert.component';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, AlertComponent],
   providers: [AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -15,6 +17,8 @@ import { AuthService } from '../../Services/auth.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  @ViewChild('alertComponent') alertComponent!: AlertComponent;
+
 
   constructor (
     private authService: AuthService,
@@ -34,6 +38,8 @@ export class LoginComponent {
       },
       error: (error) => {
         console.log("log failed");
+        this.alertComponent.message = 'Неправильний е-мейл або пароль!'
+        this.alertComponent.showAlert();
       }
     });
   }

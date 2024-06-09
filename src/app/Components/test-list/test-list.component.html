@@ -1,0 +1,47 @@
+<div class="container">
+  <button *ngIf="!isAddingTest" (click)="toggleAddTest()" class="add-button">Додати тест</button>
+  <div *ngIf="isAddingTest">
+      <input type="text" [(ngModel)]="newTestName" placeholder="Назва нового тесту">
+      <button (click)="addTest()" class="add-button">Додати</button>
+      <button (click)="cancelAddTest()" class="delete-button">Скасувати</button>
+  </div>
+</div>
+
+<div *ngIf="tests.length > 0; else noTests">
+  <ul>
+      <li *ngFor="let test of tests" class="test-item">
+          <div *ngIf="editingTestId !== test.id">
+              {{ test.name }}
+              <button (click)="editTest(test)" class="edit-button">Редагувати</button>
+              <button (click)="deleteTest(test.id)" class="delete-button">Видалити</button>
+              <ul>
+                  <li *ngFor="let answer of answersMap[test.id]" class="answer-item">
+                      <label>
+                          <input type="checkbox" [checked]="answer.is_correct" disabled> {{ answer.name }}
+                      </label>
+                  </li>
+              </ul>
+          </div>
+          <div *ngIf="editingTestId === test.id" class="edit-container">
+              <input type="text" [(ngModel)]="test.name">
+              <ul>
+                  <li *ngFor="let answer of answersMap[test.id]">
+                      <label>
+                          <input type="checkbox" [(ngModel)]="answer.is_correct"> 
+                          <input type="text" [(ngModel)]="answer.name" class="answer-input">
+                          <button (click)="deleteAnswer(test.id, answer)" class="delete-button">Видалити</button>
+                      </label>
+                  </li>
+              </ul>
+              <button (click)="addAnswer(test.id)" class="add-button">Додати відповідь</button>
+              <button (click)="saveTest(test)" class="edit-button">Зберегти</button>
+              <button (click)="cancelEdit()" class="delete-button">Скасувати</button>
+          </div>
+      </li>
+  </ul>
+</div>
+<ng-template #noTests>
+  <p>Немає тестів для цієї категорії.</p>
+</ng-template>
+
+<app-alert #alertComponent></app-alert>

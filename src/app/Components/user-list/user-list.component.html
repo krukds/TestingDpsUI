@@ -1,0 +1,37 @@
+<div class="container">
+    <h3 id="user-header">Список користувачів</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Ім'я</th>
+          <th>Прізвище</th>
+          <th>Телефон</th>
+          <th>Локація</th>
+          <th>Відділ</th>
+          <th>Опції</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.location }}</td>
+          <td>{{ user.department }}</td>
+          <td>
+            <button (click)="editUser(user.id)">
+              <img src="assets/edit.png" alt="Редагувати" />
+            </button>
+            <button (click)="deleteUser(user.id)">
+              <img src="assets/delete.png" alt="Видалити" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

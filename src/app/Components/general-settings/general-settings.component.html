@@ -1,0 +1,67 @@
+<h3>Надання доступу до тестувань користувачам</h3>
+<p>Надати доступ всій ДПС:</p>
+<div class="row">
+    <div class="list">
+        <label>Виберіть локацію ДПС</label>
+        <div class="container">
+            <app-location-list (locationSelected)="onLocationSelected($event)"></app-location-list>
+        </div>
+    </div>
+    <div class="list" style="padding-left: 20px;">
+        <label>Виберіть тестування</label>
+        <div class="container">
+            <app-testing-drop-down (testingSelected)="onTestingSelectedL($event)"></app-testing-drop-down>
+        </div>
+    </div>
+    <button (click)="grantAccessToLocation()">Надати доступ</button>
+    <button (click)="revokeAccessFromLocation()">Закрити доступ</button>
+</div>
+<div class="row">
+    <div class="list">
+        <label>Виберіть відділ</label>
+        <div class="container">
+            <app-department-list (departmentSelected)="onDepartmentSelected($event)"></app-department-list>
+        </div>
+    </div>
+    <div class="list" style="padding-left: 20px;">
+        <label>Виберіть тестування</label>
+        <div class="container">
+            <app-testing-drop-down (testingSelected)="onTestingSelectedD($event)"></app-testing-drop-down>
+        </div>
+    </div>
+    <button (click)="grantAccessToDepartment()">Надати доступ</button>
+    <button (click)="revokeAccessFromDepartment()">Закрити доступ</button>
+
+</div>
+
+<div class="row">
+    <div class="list">
+        <label>Введіть електронну пошту користувача</label>
+        <div class="container">
+            <input type="email" [(ngModel)]="userEmail" name="userEmail">
+        </div>
+    </div>
+    <div class="list" style="padding-left: 20px;">
+        <label>Виберіть тестування</label>
+        <div class="container">
+            <app-testing-drop-down (testingSelected)="onTestingSelectedByEmail($event)"></app-testing-drop-down>
+        </div>
+    </div>
+    <button (click)="grantAccessToUserByEmail()">Надати доступ</button>
+    <button (click)="revokeAccessFromUserByEmail()">Закрити доступ</button>
+</div>
+
+<div class="row">
+    <div class="list">
+        <label>Виберіть тестування</label>
+        <div class="container">
+            <app-testing-drop-down (testingSelected)="onTestingSelectedAll($event)"></app-testing-drop-down>
+        </div>
+    </div>
+    <button (click)="grantAccessToAllUsers()">Надати доступ всім користувачам</button>
+    <button (click)="revokeAccessFromAllUsers()">Закрити доступ всім користувачам</button>
+</div>
+
+
+<app-alert #alertComponent></app-alert>
+
